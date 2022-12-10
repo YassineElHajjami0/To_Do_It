@@ -1,0 +1,638 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body
+{
+	height:  100vh;
+	background-image: url(./silas-baisch-f4bfvVXKZP8-unsplash.jpg);
+	background-size: cover;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.App
+{
+	width: 100%;
+	height: 100%;
+}
+.flexall
+{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background-color: rgba(0, 0, 0, 0.276);
+	overflow-y: scroll;
+}
+
+.loading
+{
+
+	transform: translate(-50%, -50%);
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	animation:rot .7s infinite linear;
+	transform-origin: center;
+	perspective-origin: center;
+}
+.loading::before {
+	content: '';
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	background: linear-gradient(rgb(6, 91, 134), rgba(36, 127, 169, 0));
+	border-top-left-radius:50px ;
+	border-bottom-left-radius:50px ;
+}
+.loading span {
+	position : absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background-color: rgb(0, 183, 255);
+}
+.loading::after
+{
+	content: '';
+	position : absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background-color: rgb(0, 183, 255);
+	filter: blur(5px);
+}
+
+.loading .box
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 70px;
+	height: 70px;
+	background-color:rgb(12, 40, 59);
+	border-radius: 50%;
+}
+
+.bgLoading
+{
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color:rgb(12, 40, 59);
+}
+@keyframes rot
+{
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.thebigest
+{
+	flex-grow: 1;
+}
+
+.boobles
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: center;
+	bottom:-100%;
+	overflow: hidden;
+}
+
+@keyframes float
+{
+	0%
+	{
+		transform:  translateY(400px);
+		opacity: 1;
+	}
+	100%{
+		transform:  translateY(-400px);
+		opacity: 0;
+	}
+}
+
+.boobles img
+{
+	max-width: 100px;
+	opacity: .5;
+	bottom: 0;
+	animation: float 8s linear  infinite;
+}
+.boobles img:first-child
+{
+	animation-delay: 1s;
+	width: 70px;
+}
+.boobles img:nth-child(2)
+{
+	animation-delay: .2s;
+	width: 90px;
+}
+.boobles img:nth-child(3)
+{
+	animation-delay: 3s;
+	width: 60px;
+}
+.boobles img:nth-child(4)
+{
+	animation-delay: 1.2s;
+	width: 80px;
+
+}
+.boobles img:nth-child(5)
+{
+	animation-delay: 2s;
+	width: 60px;
+}
+.boobles img:nth-child(6)
+{
+	animation-delay: 2.6s;
+	width: 80px;
+}
+.boobles img:nth-child(7)
+{
+	animation-delay: 5s;
+	width: 80px;
+}
+.boobles img:nth-child(8)
+{
+	animation-delay: 1.5s;
+	width: 60px;
+}
+.boobles img:nth-child(9)
+{
+	animation-delay: 1s;
+	width: 80px;
+}
+.boobles img:nth-child(10)
+{
+	animation-delay: 3s;
+	width: 90px;
+}
+.boobles img:nth-child(11)
+{
+	animation-delay: 2s;
+	width: 80px;
+}
+
+.Header
+{
+	padding: 10px;
+	color:  rgb(242, 244, 244);
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.Nav
+{
+	display: flex;
+	justify-content:  space-between;
+	align-items: center;
+}
+
+.Nav form {
+	display: flex;
+	align-items: center;
+}
+.Nav form input
+{
+	margin: 0 5px;
+	padding: 5px;
+	border: none;
+	outline: none;
+	border-radius: 2px;
+	transition: .3s;
+}
+.Nav form .searchico
+{
+	cursor: pointer;
+	color: antiquewhite;
+	transition: .2s;
+	font-size: 18px;
+	position: relative;
+}
+.Nav form .searchico:active
+{
+	scale: 0.7;
+}
+.Nav form .searchico::before
+{
+	content: "I'm just for styling :)";
+	width: 100px;
+	height: 20px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color:red ;
+}
+.Nav ul
+{
+	padding: 15px;
+	display: flex;
+	align-items: center;
+	list-style: none;
+}
+.Nav ul li
+{
+	position: relative;
+	margin-left: 10px;
+	color: white;
+	padding: 5px 0;
+	cursor: pointer;
+}
+.Nav ul li .link
+{
+	color: white;
+	text-decoration: none;
+}
+.Nav ul li:not(:last-child)::before
+{
+	content: '';
+	width: 0px;
+	height: 2px;
+	background-color: rgb(22, 102, 126);
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	transition: .3s;
+	border-radius: 2px;
+}
+.Nav ul li:not(:last-child):hover::before
+{
+	width: 100%;
+}
+.Nav ul li:not(:last-child) .Link:hover
+{
+	color:  rgb(16, 147, 187);
+}
+.fixed {
+	z-index: 10;
+	position: sticky;
+	top: 0;
+/* 	background:linear-gradient( rgba(0, 0, 0, 0.415),  rgba(0, 0, 0, 0.046));*/
+	backdrop-filter: blur(3px);
+	box-shadow: -15px 17px 17px rgba(6, 46, 77, 0.423);
+}
+
+nav ul li:last-child
+{
+	width: 20px;
+	height: 25px;
+	position : relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	display: none;
+}
+nav ul li:last-child span
+{
+	position: absolute;
+	width: 100%;
+	height: 3px;
+	background-color: rgb(255, 255, 255);
+	border-radius: 2px;
+	transition: .3s;
+}
+nav ul li:last-child span:nth-child(2)
+{
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 50%;
+}
+nav ul li:last-child:hover span:nth-child(2)
+{
+	width: 100%;
+}
+nav ul li:last-child span:last-child
+{
+	bottom: 0;
+}
+@media (max-width: 480px) {
+	.Nav ul li:not(:last-child)
+	{
+		display: none;
+	}
+	nav ul li:last-child
+	{
+		display: block;
+	}
+}
+
+main.postsize
+{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	padding: 20px 0 40px 0;
+
+}
+article.posts
+{
+	flex-basis: 150px;
+	margin: 10px;
+	border-bottom: 1px solid rgba(192, 231, 240, 0.695);
+	padding: 10px;
+	background-color: rgba(29, 105, 133, 0.293);
+	height: 150px;
+	position: relative;
+	overflow: hidden;
+	width: 200px;
+	height: 200px;
+	transition: .3s;
+	border-radius: 5px;
+}
+article.posts:active
+{
+	transform: scale(.9);
+}
+
+
+article.posts button
+{
+	padding: 5px;
+	position: absolute;
+	bottom: -7px;
+	right: -7px;
+	border: none;
+	outline: none;
+	width: 40px;
+	height: 40px;
+	background-color:  rgba(29, 105, 133, 0.565);
+	border-radius: 50%;
+	font-size: 18px;
+	cursor: pointer;
+	color: rgb(231, 214, 214);
+	transition: .3s;
+}
+article.posts button:hover {
+	color:  rgb(162, 75, 75);
+}
+article.posts button:active {
+	scale : .9;
+}
+article .potslinks
+{
+	text-decoration: none;
+}
+article .posttitle, main .posttitle
+{
+	font-size: 19px;
+	color:  rgb(176, 225, 232);
+	text-decoration: none;
+	transition: .3s;
+}
+article .posttitle:hover
+{
+	color:  rgb(99, 190, 203);
+}
+article .postdate,  main .postdate
+{
+	color:  rgb(255, 255, 255);
+	text-decoration: none;
+	margin: 5px 0;
+}
+article .postbody, main .postbody
+{
+	color:  rgb(67, 159, 190);
+	text-decoration: none;
+	transition: .3s;
+	line-height: 1.6;
+	margin-bottom: 20px;
+}
+article .postbody:hover
+{
+	letter-spacing: .7px;
+}
+
+
+.postpage
+{
+	padding: 10px;
+}
+.myfooter
+{
+	color: rgb(17, 82, 112);
+	background: linear-gradient(to top, rgb(11, 88, 118), #cff4f57c, #cff4f50a);
+	padding: 5px;
+	font-size: 12px;
+	text-align: center;
+	height: 30px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	flex-shrink: 1;
+}
+
+.visitourhome
+{
+	text-decoration: none;
+	font-size: 15px;
+	padding: 5px;
+	border-radius: 5px;
+	color: white;
+	background-color: rgb(22, 130, 169);
+	transition: .3s;
+	display: flex;
+	align-items: center;
+	width:130px;
+	justify-content: space-between;
+
+}
+.visitourhome:hover
+{
+	background-color: rgb(16, 96, 125);
+}
+.trash
+{
+	color: transparent;
+	transition: .5s;
+	width: 0;
+}
+.deletepost
+{
+	border: none;
+	outline: none;
+	padding: 5px;
+	display: flex;
+	width: 70px;
+	border-radius: 5px;
+	color: white;
+	background-color: rgb(238, 94, 69);
+	justify-content: space-between;
+	transition: .3s;
+	cursor: pointer;
+/* 	display: inline-block;
+ */	margin-right: 10px;
+ margin-bottom: 10px;
+ width: 80px;
+
+}
+
+.deletepost:hover
+{
+	background-color: rgb(195, 74, 53);
+}
+.deletepost:hover .trash
+{
+	display:  block;
+	color: white;
+	width: 100%;
+}
+.newpost
+{
+	padding: 10px;
+}
+.formnewpost
+{
+	display: flex;
+	flex-direction: column;
+}
+.formnewpost label
+{
+	color: rgb(209, 225, 227);
+	margin: 5px 0;
+}
+.formnewpost input, .formnewpost textarea, .formnewpost button
+{
+	border: none;
+	outline : none;
+	border-radius: 5px;
+	padding: 5px;
+	background-color: rgba(113, 147, 174, 0.586);
+	color: white;
+}
+.formnewpost input::placeholder,  .formnewpost textarea::placeholder {
+	color: rgb(214, 207, 207);
+}
+.formnewpost textarea
+{
+	max-height: 200px;
+	min-height: 100px;
+	max-width: 100%;
+	min-width: 100px;
+}
+.formnewpost button
+{
+	width: 100px;
+	border: none;
+	outline: none;
+	margin-top: 10px;
+	color: white;
+	background-color: rgba(0, 208, 255, 0);
+	cursor: pointer;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	filter: drop-shadow(10px 15px 4px #105a6e9a);
+}
+.formnewpost button::before
+{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -15px;
+	width: 10px;
+	height: 100%;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	background-color: rgb(14, 136, 188);
+	transform: skew(20deg);
+	transition: .3s;
+	z-index: -1;
+
+}
+.formnewpost button::after
+{
+	content: '';
+	position: absolute;
+	top: 0;
+	right: -15px;
+	width: 10px;
+	height: 100%;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	background-color: rgb(14, 136, 188);
+	transform: skew(20deg);
+	transition: .3s;
+	z-index: -1;
+
+}
+.formnewpost button:hover::before ,.formnewpost button:hover::after
+{
+	width: 80%;
+}
+.About
+{
+	padding: 10px;
+	text-align: center;
+}
+.About h2
+{
+	color: aliceblue;
+}
+.About p
+{
+	color: #eee;
+	line-height: 1.6;
+	margin-top: 10px;
+}
+
+.Updatepost {
+	padding: 5px;
+	border: none;
+	border-radius: 5px;
+	outline: none;
+	background-color: rgb(33, 141, 147);
+	color: white;
+	transition: .3s;
+	cursor: pointer;
+
+}
+.Updatepost:hover {
+
+	background-color: rgb(27, 106, 110);
+}
+.updatePost{
+	padding: 10px;
+}
+.nopost
+{
+	color: white;
+	text-align: center;
+	margin-top: 40px;
+}

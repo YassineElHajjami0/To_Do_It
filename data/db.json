@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "My First post",
+      "datetime": "11/23/2022",
+      "body": "MMMlorem ipsum dolor sit amet consecteture adipiscing elit."
+    },
+    {
+      "id": 7,
+      "title": "the third title",
+      "datetime": "11/18/2022",
+      "body": "of course this is just a fucking bull_shit"
+    },
+    {
+      "id": 8,
+      "title": "fourth post",
+      "datetime": "11/20/2022",
+      "body": "just the fourth post"
+    },
+    {
+      "id": 10,
+      "title": "f5t45",
+      "datetime": "11/20/2022",
+      "body": "f56t"
+    },
+    {
+      "id": 11,
+      "title": "f54t5",
+      "datetime": "11/20/2022",
+      "body": "5fg5gt"
+    }
+  ]
+}
